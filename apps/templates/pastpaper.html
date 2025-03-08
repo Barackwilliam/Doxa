@@ -1,0 +1,59 @@
+{% extends 'base.html'%}
+
+{% load static %}
+{% block content %}
+    <!-- Class Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="text-center pb-2">
+                <p class="section-title px-5"><span class="px-2">Popular Classes</span></p>
+                <h1 class="mb-4">Boost confidence before exams</h1>
+                <p>Welcome to the Past Papers Archive
+                    Find and download past exam papers for Standard 1 to Standard 7.
+                     These past papers will help students revise, practice, and prepare for their exams more effectively.</p>
+                     <p>Click on the <b>Download</b> button next to each past paper to get a PDF version.</p>
+            </div>
+            <div class="row">
+
+                      {% for i in past_papers %}
+                <div class="col-lg-4 mb-5">
+                    <div class="card border-0 bg-light shadow-sm pb-2">
+                        <img class="card-img-top mb-2" src="{{i.image.url}}" alt="">
+                        <div class="card-body text-center">
+                            <h4 class="card-title">{{i.subject}}</h4>
+                            <p class="card-text">{{i.description}}</p>
+                        </div>
+                        <div class="card-footer bg-transparent py-4 px-5">
+                            <div class="row border-bottom">
+                                <div class="col-6 py-1 text-right border-right"><strong>Class</strong></div>
+                                <div class="col-6 py-1">{{i.standard}}</div>
+                            </div>
+                            <div class="row border-bottom">
+                                <div class="col-6 py-1 text-right border-right"><strong>Year</strong></div>
+                                <div class="col-6 py-1">{{i.year}}</div>
+                            </div>
+                            <div class="row border-bottom">
+                                <div class="col-6 py-1 text-right border-right"><strong>Time</strong></div>
+                                <div class="col-6 py-1">{{i.time_uploaded}}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 py-1 text-right border-right"><strong>Price</strong></div>
+                                <div class="col-6 py-1">Free</div>
+                            </div>
+                        </div>
+                        <a href="{{i.pdf_file.url}}" class="btn btn-primary px-4 mx-auto mb-4">Download</a>
+                    </div>
+                </div>
+
+                {% endfor %}
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Class End -->
+
+
+
+
+    {% endblock %}

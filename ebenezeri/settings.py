@@ -11,11 +11,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Security settings
 SECRET_KEY = os.getenv('SECRET_KEY', 'fallback-secret-key')
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+DEBUG =False
 ALLOWED_HOSTS = ["*"]
 
 # Application definition
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,28 +59,33 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ebenezeri.wsgi.application'
 
-# Database configuration
-# DATABASES = {
-#     'default': {
-#         'ENGINE': os.getenv('DB_ENGINE', 'django.db.backends.sqlite3'),
-#         'NAME': os.getenv('DB_NAME', BASE_DIR / 'db.sqlite3'),
-#         'USER': os.getenv('DB_USER', ''),
-#         'PASSWORD': os.getenv('DB_PASSWORD', ''),
-#         'HOST': os.getenv('DB_HOST', ''),
-#         'PORT': os.getenv('DB_PORT', ')}
-                          
+                    
 
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',  # Jina la database
-        'USER': 'postgres.zocmpphvuiwzlwckcbdn',  # Jina la mtumiaji
+        'USER': 'postgres.qjrmlkgabszozypoxbkq',  # Jina la mtumiaji
         'PASSWORD': 'NyumbaChap',  # Badilisha kwa password yako halisi
         'HOST': 'aws-0-eu-central-1.pooler.supabase.com',  # URL ya server ya database
         'PORT': '5432',  # Port ya PostgreSQL (default ni 5432)
     }
 }
+
+
+# user=postgres.qjrmlkgabszozypoxbkq 
+# password=[YOUR-PASSWORD] 
+# host=aws-0-eu-central-1.pooler.supabase.com
+# port=5432
+# dbname=postgres
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
@@ -119,8 +125,35 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': os.getenv('CLOUDINARY_API_SECRET')
 }
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 MEDIA_URL = f"https://res.cloudinary.com/{os.getenv('CLOUDINARY_CLOUD_NAME')}/"
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+
+
+# Jazzmin Settings
+JAZZMIN_SETTINGS = {
+    "site_title": "My Admin Panel",
+    "site_header": "My Dashboard",
+    "site_brand": "Mbezibwa The Great Academic",
+    "welcome_sign": "Welcome to Mbezibwa The Great Academic Dashboard",
+    "copyright": "Mbezibwa The Great Academic Platform © 2025",
+    "search_model": "auth.User",
+    "topmenu_links": [
+        {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"model": "auth.User"},
+        {"app": "Mbezibwa The Great Academic Platform"},
+    ],
+}
+
+JAZZMIN_UI_TWEAKS = {
+    "theme": "darkly",
+    "navbar_fixed": True,
+    "sidebar_fixed": True,
+    "footer_fixed": False,
+    "show_ui_builder": True,
+}

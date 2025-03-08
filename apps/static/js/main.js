@@ -1,36 +1,6 @@
 (function ($) {
     "use strict";
     
-    // Initiate the wowjs
-    new WOW().init();
-    
-    
-    // Back to top button
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 200) {
-            $('.back-to-top').fadeIn('slow');
-        } else {
-            $('.back-to-top').fadeOut('slow');
-        }
-    });
-    $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-        return false;
-    });
-    
-    
-    // Sticky Navbar
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 90) {
-            $('.nav-bar').addClass('nav-sticky');
-            $('.carousel, .page-header').css("margin-top", "73px");
-        } else {
-            $('.nav-bar').removeClass('nav-sticky');
-            $('.carousel, .page-header').css("margin-top", "0");
-        }
-    });
-    
-    
     // Dropdown on mouse hover
     $(document).ready(function () {
         function toggleNavbarMethod() {
@@ -49,56 +19,38 @@
     });
     
     
-    // jQuery counterUp
-    $('[data-toggle="counter-up"]').counterUp({
-        delay: 10,
-        time: 2000
+    // Back to top button
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.back-to-top').fadeIn('slow');
+        } else {
+            $('.back-to-top').fadeOut('slow');
+        }
     });
-    
-    
-    // Modal Video
-    $(document).ready(function () {
-        var $videoSrc;
-        $('.btn-play').click(function () {
-            $videoSrc = $(this).data("src");
-        });
-        console.log($videoSrc);
-
-        $('#videoModal').on('shown.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
-        })
-
-        $('#videoModal').on('hide.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc);
-        })
+    $('.back-to-top').click(function () {
+        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        return false;
     });
 
 
-    // Testimonial Slider
-    $('.testimonial-slider').slick({
-        infinite: true,
+    // Portfolio isotope and filter
+    var portfolioIsotope = $('.portfolio-container').isotope({
+        itemSelector: '.portfolio-item',
+        layoutMode: 'fitRows'
+    });
+
+    $('#portfolio-flters li').on('click', function () {
+        $("#portfolio-flters li").removeClass('active');
+        $(this).addClass('active');
+
+        portfolioIsotope.isotope({filter: $(this).data('filter')});
+    });
+
+
+    // Post carousel
+    $(".post-carousel").owlCarousel({
         autoplay: true,
-        arrows: false,
-        dots: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        asNavFor: '.testimonial-slider-nav'
-    });
-    $('.testimonial-slider-nav').slick({
-        arrows: false,
-        dots: false,
-        focusOnSelect: true,
-        centerMode: true,
-        centerPadding: '22px',
-        slidesToShow: 3,
-        asNavFor: '.testimonial-slider'
-    });
-    $('.testimonial .slider-nav').css({"position": "relative", "height": "160px"});
-    
-    
-    // Blogs carousel
-    $(".related-slider").owlCarousel({
-        autoplay: true,
+        smartSpeed: 1500,
         dots: false,
         loop: true,
         nav : true,
@@ -115,22 +67,35 @@
             },
             768:{
                 items:2
+            },
+            992:{
+                items:2
             }
         }
     });
-    
-    
-    // Portfolio isotope and filter
-    var portfolioIsotope = $('.portfolio-container').isotope({
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
-    });
 
-    $('#portfolio-flters li').on('click', function () {
-        $("#portfolio-flters li").removeClass('filter-active');
-        $(this).addClass('filter-active');
 
-        portfolioIsotope.isotope({filter: $(this).data('filter')});
+    // Testimonials carousel
+    $(".testimonial-carousel").owlCarousel({
+        center: true,
+        autoplay: true,
+        smartSpeed: 2000,
+        dots: true,
+        loop: true,
+        responsive: {
+            0:{
+                items:1
+            },
+            576:{
+                items:1
+            },
+            768:{
+                items:2
+            },
+            992:{
+                items:3
+            }
+        }
     });
     
 })(jQuery);
