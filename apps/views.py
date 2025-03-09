@@ -33,8 +33,8 @@ def contact(request):
 
 # Home Page
 def home(request):
-    past_papers = Past_Paper.objects.all()
-    teacher = Teacher.objects.all()
+    past_papers = Past_Paper.objects.all()[:3]
+    teacher = Teacher.objects.all()[:2]
     testimon = Testimonial.objects.all()
 
     context = {
