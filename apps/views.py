@@ -7,6 +7,10 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User, auth
 from django.contrib.auth.decorators import login_required
 
+import requests
+from django.http import HttpResponse
+
+
 
 
 from .forms import MyMessage
@@ -71,9 +75,31 @@ def about(request):
 
     return render(request, 'about.html',context)
 
+
 def pastpaper(request):
     past_papers = Past_Paper.objects.all()
-    return render(request,'pastpaper.html',{'past_papers':past_papers})
+    return render(request, 'pastpaper.html', {'past_papers': past_papers})
+
+def download_pdf(request, file_id):
+    # Construct the Cloudinary URL for the file based on the file_id
+    cloudinary_url = f"https://res.cloudinary.com/Ydjzcf2bvp/raw/upload/{file_id}"
+
+    # Fetch the file from Cloudinary
+    response = requests.get(cloudinary_url, stream=True)
+
+    if response.status_code == 200:
+        # Get the filename from the URL (or use file_id)
+        filename = file_id.split("/")[-1]
+
+        # Set the headers to force download
+        res = HttpResponse(response.content, content_type='application/pdf')
+        res['Content-Disposition'] = f'attachment; filename="{filename}"'
+
+        return res
+    else:
+        return HttpResponse("File not found", status=404)
+
+
 
 def test(request):
     return render(request,'test.html')
