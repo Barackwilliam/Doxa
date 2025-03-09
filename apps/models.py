@@ -42,10 +42,16 @@ class Past_Paper(models.Model):
     subject = models.CharField(max_length=300)
     description = models.TextField()
     year = models.PositiveIntegerField()
-    image = CloudinaryField('image')
+    cover_image = CloudinaryField('image')
     standard = models.CharField(max_length=20,choices=STANDARD_CHOICES)
-    pdf_file = CloudinaryField('image')
+    pdf_file = CloudinaryField('raw',folder="Pdf_documents", resource_type='raw')
     time_uploaded = models.DateTimeField(auto_now_add=True)
+
+
+    def pdf_url(self):
+        if self.pdf_file:
+            return Cloudinary.utils.cloudinary_url(self.pdf_file.public_id,resource_type="raw")[0]
+        return None
 
     def __str__(self):
         return f"{self.subject} ({self.year})- {self.standard}"

@@ -6,7 +6,7 @@ admin.site.register(Service)
 
 @admin.register(Past_Paper)
 class Past_PaperAdmin(admin.ModelAdmin):
-    list_display = ('subject','description','year','standard','image','pdf_file','time_uploaded')
+    list_display = ('subject','description','year','standard','cover_image','pdf_file','time_uploaded')
     search_fields = ('subject','year','standard')
     list_filter = ('standard','year')
 
