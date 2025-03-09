@@ -85,7 +85,7 @@
                       {% for i in past_papers %}
                 <div class="col-lg-4 mb-5">
                     <div class="card border-0 bg-light shadow-sm pb-2">
-                        <img class="card-img-top mb-2" src="{{i.image.url}}" alt="">
+                        <img class="card-img-top mb-2" src="{{i.cover_image.url}}" alt="">
                         <div class="card-body text-center">
                             <h4 class="card-title">{{i.subject}}</h4>
                             <p class="card-text">{{i.description}}</p>
@@ -108,7 +108,9 @@
                                 <div class="col-6 py-1">Free</div>
                             </div>
                         </div>
-                        <a href="{{i.pdf_file.url}}" class="btn btn-primary px-4 mx-auto mb-4">Download</a>
+                        <!-- <a href="{{i.pdf_file.url}}" class="btn btn-primary px-4 mx-auto mb-4">Download</a> -->
+                        <a href="https://api.whatsapp.com/send?phone=255712393104&text=Hello,%20I%20visited%20your%20website%20and%20I%20am%20interested%20in%20accessing%20past%20papers%20for%20exams.%20Could%20you%20kindly%20assist%20me%20in%20obtaining%20them?%20Thank%20you%20in%20advance."class="btn btn-primary px-4 mx-auto mb-4">Download</a>
+
                     </div>
                 </div>
 
