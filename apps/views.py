@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .forms import MyMessage
 
-from .models import Service,Past_Paper,Register_Book,Book_Category,Testimonial,Teacher
+from .models import Service, Past_Paper,Register_Book,Book_Category,Testimonial,Teacher
 from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User, auth

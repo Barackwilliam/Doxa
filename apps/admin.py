@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Teacher,Past_Paper, Service,Book_Category,Register_Book,Testimonial,Gallery,CustomerMessage
+from .models import Teacher, Past_Paper, Service,Book_Category,Register_Book,Testimonial,Gallery,CustomerMessage
 # Register your models here.
 
-admin.site.register(Service)
+# admin.site.register(Service)
 
 @admin.register(Past_Paper)
 class Past_PaperAdmin(admin.ModelAdmin):
