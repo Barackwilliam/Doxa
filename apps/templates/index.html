@@ -3,188 +3,555 @@
 {% load static %}
 {% block content %}
 
-    <!-- Header Start -->
-    <div class="container-fluid px-0 px-md-5 mb-5" style="background-color: rgb(201, 209, 209);">
-        <div class="row align-items-center px-3">
-            <div class="col-lg-6 text-center text-lg-left">
-                <h3 class=" mb-4 mt-5 mt-lg-0" style="color: rgb(255, 0, 0);">Mbezibwa The Great Academic Platform</h3>
-                <h1 class="display-3 font-weight-bold " style="color: blue;">Empowering the Future Through Quality Education</h1>
-                <p class="text-black mb-4">At Mbezibwa The Great Academic Platform (MTGAP), we are committed to transforming education by providing exceptional academic support to primary school pupils across Tanzania. Established in Dodoma City, Tanzania – Mainland, in January 2024, our mission is to enhance learning experiences, 
-                    improve academic performance, and build a strong foundation for future leaders.</p>
-                <a href="{% url 'about' %}" class="btn btn-secondary mt-1 py-3 px-5">See More</a>
-            </div>
-            <div class="col-lg-6 text-center text-lg-right">
-                <img class="img-fluid mt-5" src="{% static 'img/header.png' %}" alt="">
-            </div>
-        </div>
-    </div>
-    <!-- Header End -->
 
+        </header>
+        <!-- header area end -->
 
-
-    <!-- Facilities Start -->
-    <div class="container-fluid pt-5">
-        <div class="container pb-3"> <div class="text-center pb-2">
-            <p class="section-title px-5"><span class="px-2">Popular Services</span></p>
-          
-            <p class="text-black bg-light shadow-sm border-top rounded mb-4 m-0">MTGAP provides a wide range of professional educational services tailored to meet the needs of pupils, teachers, and academic institutions..</p>
-        </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 pb-1">
-                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
-                        <i class="fas fa-file-alt h1 text-primary mb-3"></i>
-                        <div class="pl-4">
-                            <h4>1. Examination Services</h4>
-                            <p class="m-0">We design and provide high-quality assessments to help students prepare for national and internal school exams, including:
-                                <b>Monthly Exams, Special Exams, Mock Exams, Joint Exams, Weekly & Pre-National Exams</b>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="col-lg-4 col-md-6 pb-1">
-                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
-                        <i class="fas fa-school h1 text-primary mb-3"></i>
-                        <div class="pl-4">
-                            <h4>2. Internal Examination Development</h4>
-                            <p class="m-0">We assist schools in setting standardized and high-quality internal examinations for different levels: 
-                                Nursery (Baby Class, Middle Class, Top Class), Primary (Grades 1, 2, 3, 4, and beyond)</p>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="col-lg-4 col-md-6 pb-1">
-                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
-                        <i class="fas fa-book h1 text-primary mb-3"></i>
-                        <div class="pl-4">
-                            <h4>3. Academic Book Supply</h4>
-                            <p class="m-0">We provide essential learning materials and academic books to support both teachers and pupils in achieving better results.</p>
-                        </div>
-                    </div>
-                </div>
-               
-            </div>
-            <a href="{% url 'service' %}" class="btn btn-secondary mt-1 py-3 px-5">See More</a>
-        </div>
-    </div>
-    <!-- Facilities Start -->
-
-
-    <!-- Class Start -->
-    <div class="container-fluid pt-5">
+        <!-- hero slider start -->
         <div class="container">
-            <div class="text-center pb-2">
-                <p class="section-title px-5"><span class="px-2">Popular Past papers</span></p>
-                <h1 class="mb-4">Boost confidence before exams</h1>
-                <p>Find and download past exam papers for Standard 1 to Standard 7.
-                     These past papers will help students revise, practice, and prepare for their exams more effectively.</p>
-                     <p>Click on the <b>Download</b> button next to each past paper to get a PDF version.</p>
-            </div>
             <div class="row">
-
-                      {% for i in past_papers %}
-                <div class="col-lg-4 mb-5">
-                    <div class="card border-0 bg-light shadow-sm pb-2">
-                        <img class="card-img-top mb-2" src="{{i.cover_image.url}}" alt="">
-                        <div class="card-body text-center">
-                            <h4 class="card-title">{{i.subject}}</h4>
-                            <p class="card-text">{{i.description}}</p>
+                <div class="col-lg-12">
+                    <div class="slider-wrapper-area">
+                        <div class="hero-slider-active hero__1 slick-dot-style hero-dot">
+                            <div class="single-slider" style="background-image: url({% static 'img/slider/phone.jpg' %});">
+                                <div class="container p-0">
+                                    <div class="slider-main-content">
+                                        <div class="slider-content-img">
+                                            <img src="{% static 'img/slider/slider11_lable1.png' %}" alt="">
+                                            <img src="{% static 'img/slider/slider11_lable2.png' %}" alt="">
+                                            <img src="{% static 'img/slider/slider1_lable3.png' %}" alt="">
+                                        </div>
+                                        <div class="slider-text">
+                                            <div class="slider-label">
+                                                <img src="{% static 'img/slider/slider11_lable.png' %}" alt="">
+                                            </div>
+                                            <h1>Our Services</h1>
+                                            <p>Generator Instillation,<br>Installation of Electrical Fence<br> CCTV Camera Instillation,<br> Hotel Tv Systems Instillation<br>WiFi Connections</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="single-slider" style="background-image: url(assets/img/slider/bg.jpg);">
+                                <div class="container p-0">
+                                    <div class="slider-main-content">
+                                        <div class="slider-content-img">
+                                            <img src="{% static 'img/slider/slider11_lable1.png' %}" alt="">
+                                            <img src="{% static 'img/slider/slider11_lable2.png' %}" alt="">
+                                            <img src="{% static 'img/slider/slider1_lable3.png' %}" alt="">
+                                        </div>
+                                        <div class="slider-text">
+                                            <div class="slider-label" style="width: fit-content;">
+                                                <img src="{% static 'img/slider/bg.jpg' %}" alt="">
+                                            </div>
+                                            <h1>samson s90</h1>
+                                            <p>Typi Non Habent Claritatem Insitam; Est Usus Legentis</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
                         </div>
-                        <div class="card-footer bg-transparent py-4 px-5">
-                            <div class="row border-bottom">
-                                <div class="col-6 py-1 text-right border-right"><strong>Class</strong></div>
-                                <div class="col-6 py-1">{{i.standard}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- hero slider end -->
+
+        <!-- home banner area start -->
+        <div class="banner-area mt-30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6 order-1">
+                        <div class="img-container img-full fix imgs-res mb-sm-30">
+                            <a href="{% url 'electronic' %}">
+                                <img src="{% static 'img/banner/banner_left.jpg' %}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-5 order-sm-3">
+                        <div class="img-container img-full fix mb-30">
+                            <a href="{% url 'shoes' %}">
+                                <img src="{% static 'img/banner/shoes.jpg' %}" alt="">
+                            </a>
+                        </div>
+                        <div class="img-container img-full fix mb-30">
+                            <a href="{% url 'electronic' %}">
+                                <img src="{% static 'img/banner/banner_static_top2.jpg' %}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 order-2 order-md-3">
+                        <div class="img-container img-full fix">
+                            <a href="{% url 'electronic' %}">
+                                <img src="{% static 'img/banner/bg.jpg' %}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- home banner area end -->
+
+        <!-- page wrapper start -->
+        <div class="page-wrapper pt-6 pb-28 pb-md-6 pb-sm-6 pt-xs-36">
+            <div class="container">
+                <div class="row">
+                    <!-- start home sidebar -->
+                    <div class="col-lg-3">
+                        <div class="home-sidebar">
+                            <!-- hot deals area start -->
+                            <div class="main-sidebar hot-deals-wrap mb-30">
+                                <div class="section-title-2 d-flex justify-content-between mb-28">
+                                    <h3>Electronic Products</h3>
+                                    <div class="slick-append"></div>
+                                </div> <!-- section title end -->
+                                <div class="deals-carousel-active slick-padding slick-arrow-style">
+
+
+                                    <!-- product single item start -->
+
+                                    {% for i in electronics %}
+                            
+                                    <div class="product-item fix">
+                                        <div class="product-thumb">
+                                            <a href="">
+                                                <img src="{{i.image1.url}}" class="img-pri" alt="">
+                                                <img src="{{i.image2.url}}" class="img-sec" alt="">
+                                            </a>
+                                            <div class="product-label">
+                                                <span>hot</span>
+                                            </div>
+                                            <div class="product-action-link">
+                                                <a href="{% url 'electronic' %}" data-toggle="modal" data-target="#quick_view"> <span
+                                                        data-toggle="tooltip" data-placement="left" title="Quick view"><i
+                                                            class="fa fa-search"></i></span> </a>
+                                                <a href="{% url 'electronic' %}" data-toggle="tooltip" data-placement="left" title="Wishlist"><i
+                                                        class="fa fa-heart-o"></i></a>
+                                                <a href="{% url 'electronic' %}" data-toggle="tooltip" data-placement="left" title="Compare"><i
+                                                        class="fa fa-refresh"></i></a>
+                                                <a href="{% url 'electronic' %}" data-toggle="tooltip" data-placement="left" title="Add to cart"><i
+                                                        class="fa fa-shopping-cart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-content">
+                                            <h4><a href="{% url 'electronic' %}">{{i.product_name}}</a></h4>
+                                            <div class="pricebox">
+                                                <span class="regular-price">Tsh. {{i.price}}</span>
+                                                <div class="ratings">
+                                                    <span class="good"><i class="fa fa-star"></i></span>
+                                                    <span class="good"><i class="fa fa-star"></i></span>
+                                                    <span class="good"><i class="fa fa-star"></i></span>
+                                                    <span class="good"><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <div class="pro-review">
+                                                        <span>1 review(s)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {% endfor %}
+                                    <!-- product single item end -->
+
+
+                                  
+                                    <!-- product single item end -->
+                                </div>
                             </div>
-                            <div class="row border-bottom">
-                                <div class="col-6 py-1 text-right border-right"><strong>Year</strong></div>
-                                <div class="col-6 py-1">{{i.year}}</div>
+                            <!-- hot deals area end -->
+
+                            <!-- best seller area start -->
+                            <div class="main-sidebar category-wrapper mb-24">
+                                <div class="section-title-2 d-flex justify-content-between mb-28">
+                                    <h3>Clothes & Textile</h3>
+                                    <div class="category-append"></div>
+                                </div> <!-- section title end -->
+                                <div class="category-carousel-active row" data-row="4">
+
+                                    {% for i in female_clothes %}
+                                    <div class="col">
+                                        <div class="category-item">
+                                            <div class="category-thumb">
+                                                <a href="{% url 'female' %}">
+                                                    <img src="{{i.image1.url}}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="category-content">
+                                                <h4><a href="{% url 'female' %}">{{i.type_of_clothes}}</a></h4>
+                                                <div class="price-box">
+                                                    <div class="regular-price">
+                                                       Tsh.{{i.regular_price}}
+                                                    </div>
+                                                    <div class="old-price">
+                                                        <del>Tsh.{{i.old_price}}</del>
+                                                    </div>
+                                                </div>
+                                                <div class="ratings">
+                                                    <span class="good"><i class="fa fa-star"></i></span>
+                                                    <span class="good"><i class="fa fa-star"></i></span>
+                                                    <span class="good"><i class="fa fa-star"></i></span>
+                                                    <span class="good"><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <div class="pro-review">
+                                                        <span>1 review(s)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> <!-- end single item -->
+                                    </div> <!-- end single item column -->
+
+
+                                    {% endfor %}
+                                   
+                                </div>
                             </div>
-                            <div class="row border-bottom">
-                                <div class="col-6 py-1 text-right border-right"><strong>Time</strong></div>
-                                <div class="col-6 py-1">{{i.time_uploaded}}</div>
+                            <!-- best seller area end -->
+
+
+                            <!-- testimonial area start -->
+                            <div class="main-sidebar testimonial-area pb-sm-70">
+                                <div class="section-title-2 mb-28">
+                                    <h3>Clients Say</h3>
+                                </div> <!-- section title end -->
+                                <div class="testimonial-carousel-active slick-dot-style">
+
+                                            {% for i in testimonial%} 
+
+                                    <div class="testimonial-item text-center">
+                                        <div class="testimonial-thumb">
+                                            <img src="{{i.image.url}}" alt="">
+                                        </div>
+                                        <div class="testimonial-content">
+                                            <h3><a href="#">{{i.client_name}}</a></h3>
+                                            <p>{{i.description}}</p>
+                                        </div>
+                                    </div> <!-- end single testimonial item -->
+
+                                  {% endfor %}
+
+                                </div>
                             </div>
+                            <!-- testimonial area end -->
+
+                        </div>
+                    </div>
+                    <!-- end home sidebar -->
+
+                    <div class="col-lg-9">
+                        <!-- featured category area start -->
+                        <div class="feature-category-area mt-md-70">
+                            <div class="section-title mb-30">
+                                <div class="title-icon">
+                                    <i class="fa fa-bookmark"></i>
+                                </div>
+                                <h3>Child Clothes</h3>
+                            </div> <!-- section title end -->
+                            <!-- featured category start -->
+                            <div class="featured-carousel-active slick-padding slick-arrow-style">
+                                <!-- product single item start -->
+
+                               {% for i in child_clothes %}
+                                <div class="product-item fix">
+                                    <div class="product-thumb">
+                                        <a href="{% url 'child' %}">
+                                            <img src="{{i.image1.url}}" class="img-pri" alt="">
+                                            <img src="{{i.image2.url}}" class="img-sec" alt="">
+                                        </a>
+                                        <div class="product-label">
+                                            <span>hot</span>
+                                        </div>
+                                        <div class="product-action-link">
+                                            <a href="{% url 'child' %}" data-toggle="modal" data-target="#quick_view"> <span
+                                                    data-toggle="tooltip" data-placement="left" title="Quick view"><i
+                                                        class="fa fa-search"></i></span> </a>
+                                            <a href="{% url 'child' %}" data-toggle="tooltip" data-placement="left" title="Wishlist"><i
+                                                    class="fa fa-heart-o"></i></a>
+                                            <a href="{% url 'child' %}" data-toggle="tooltip" data-placement="left" title="Compare"><i
+                                                    class="fa fa-refresh"></i></a>
+                                            <a href="{% url 'child' %}" data-toggle="tooltip" data-placement="left" title="Add to cart"><i
+                                                    class="fa fa-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h4><a href="{% url 'child' %}">{{i.type_of_clothes}}</a></h4>
+                                        <div class="pricebox">
+                                            <span class="regular-price">{{i.regular_price}}</span>
+                                            <div class="ratings">
+                                                <span class="good"><i class="fa fa-star"></i></span>
+                                                <span class="good"><i class="fa fa-star"></i></span>
+                                                <span class="good"><i class="fa fa-star"></i></span>
+                                                <span class="good"><i class="fa fa-star"></i></span>
+                                                <span><i class="fa fa-star"></i></span>
+                                                <div class="pro-review">
+                                                    <span>1 review(s)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- product single item end -->
+                               {% endfor %}
+
+                            </div>
+                            <!-- featured category end -->
+                        </div>
+                        <!-- featured category area end -->
+
+                        <!-- banner statistic start -->
+                        <div class="banner-statistic pt-28 pb-36">
+                            <div class="img-container fix img-full">
+                                <a href="#">
+                                    <img src="{% static 'img/banner/banner_static.jpg' %}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <!-- banner statistic end -->
+
+                        <!-- featured category area start -->
+                        <div class="feature-category-area">
+                            <div class="section-title mb-30">
+                                <div class="title-icon">
+                                    <i class="fa fa-flask"></i>
+                                </div>
+                                <h3>Male Clothes</h3>
+                            </div> <!-- section title end -->
+                            <!-- featured category start -->
+                            <div class="featured-carousel-active slick-padding slick-arrow-style">
+                                <!-- product single item start -->
+
+                                {% for i in male_clothes %}
+                                <div class="product-item fix">
+                                    <div class="product-thumb">
+                                        <a href="{% url 'male' %}">
+                                            <img src="{{i.image1.url}}" class="img-pri" alt="">
+                                            <img src="{{i.image2.url}}" class="img-sec" alt="">
+                                        </a>
+                                        <div class="product-label">
+                                            <span>new</span>
+                                        </div>
+                                        <div class="product-action-link">
+                                            <a href="{% url 'male' %}" data-toggle="modal" data-target="#quick_view"> <span
+                                                    data-toggle="tooltip" data-placement="left" title="Quick view"><i
+                                                        class="fa fa-search"></i></span> </a>
+                                            <a href="{% url 'male' %}" data-toggle="tooltip" data-placement="left" title="Wishlist"><i
+                                                    class="fa fa-heart-o"></i></a>
+                                            <a href="{% url 'male' %}" data-toggle="tooltip" data-placement="left" title="Compare"><i
+                                                    class="fa fa-refresh"></i></a>
+                                            <a href="{% url 'male' %}" data-toggle="tooltip" data-placement="left" title="Add to cart"><i
+                                                    class="fa fa-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h4><a href="{% url 'male' %}">{{i.type_of_clothes}}</a></h4>
+                                        <div class="pricebox">
+                                            <span class="regular-price">Tsh.{{i.regular_price}}</span>
+                                            <div class="ratings">
+                                                <span class="good"><i class="fa fa-star"></i></span>
+                                                <span class="good"><i class="fa fa-star"></i></span>
+                                                <span class="good"><i class="fa fa-star"></i></span>
+                                                <span class="good"><i class="fa fa-star"></i></span>
+                                                <span><i class="fa fa-star"></i></span>
+                                                <div class="pro-review">
+                                                    <span>1 review(s)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- product single item end -->
+
+                                {% endfor %}
+                              
+                               
+                            </div>
+                            <!-- featured category end -->
+                        </div>
+                        <!-- featured category area end -->
+
+                        <!-- banner statistic start -->
+                        <div class="banner-statistic pt-28 pb-30 pb-sm-0">
                             <div class="row">
-                                <div class="col-6 py-1 text-right border-right"><strong>Price</strong></div>
-                                <div class="col-6 py-1">Free</div>
+                                <div class="col-lg-7 col-md-7">
+                                    <div class="img-container fix img-full mb-sm-30">
+                                        <a href="{% url 'electronic' %}">
+                                            <img src="{% static 'img/banner/banner_static2.jpg' %}" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-5">
+                                    <div class="img-container fix img-full mb-sm-30">
+                                        <a href="{% url 'electronic' %}">
+                                            <img src="{% static 'img/banner/banner_static3.jpg' %}" alt="">
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <!-- <a href="{{i.pdf_file.url}}" class="btn btn-primary px-4 mx-auto mb-4">Download</a> -->
-                        <a href="https://api.whatsapp.com/send?phone=255712393104&text=Hello,%20I%20visited%20your%20website%20and%20I%20am%20interested%20in%20accessing%20past%20papers%20for%20exams.%20Could%20you%20kindly%20assist%20me%20in%20obtaining%20them?%20Thank%20you%20in%20advance."class="btn btn-primary px-4 mx-auto mb-4">Download</a>
+                        <!-- banner statistic end -->
 
+                        <!-- category features area start -->
+                        <div class="category-feature-area">
+                            <div class="row">
+                                
+                                <!-- Most viewed area start -->
+                                <div class="col-lg-4">
+                                    <div class="category-wrapper mb-md-24 mb-sm-24">
+                                        <div class="section-title-2 d-flex justify-content-between mb-28">
+                                            <h3>Male Clothes</h3>
+                                            <div class="category-append"></div>
+                                        </div> <!-- section title end -->
+                                        <div class="category-carousel-active row" data-row="4">
+
+                                            {% for i in male_clothes %}
+                                            <div class="col">
+                                                <div class="category-item">
+                                                    <div class="category-thumb">
+                                                        <a href="{% url 'male' %}">
+                                                            <img src="{{i.image1.url}}" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="category-content">
+                                                        <h4><a href="{% url 'male' %}">{{i.type_of_clothes}}</a></h4>
+                                                        <div class="price-box">
+                                                            <div class="regular-price">
+                                                                Tsh.{{i.regular_price}}
+                                                            </div>
+                                                            <div class="old-price">
+                                                                <del>{{i.old_price}}</del>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ratings">
+                                                            <span class="good"><i class="fa fa-star"></i></span>
+                                                            <span class="good"><i class="fa fa-star"></i></span>
+                                                            <span class="good"><i class="fa fa-star"></i></span>
+                                                            <span class="good"><i class="fa fa-star"></i></span>
+                                                            <span><i class="fa fa-star"></i></span>
+                                                            <div class="pro-review">
+                                                                <span>1 review(s)</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div> <!-- end single item -->
+                                            </div> <!-- end single item column -->
+
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Most viewed area end -->
+                                <!-- Most viewed area start -->
+                                <div class="col-lg-4">
+                                    <div class="category-wrapper mb-md-24 mb-sm-24">
+                                        <div class="section-title-2 d-flex justify-content-between mb-28">
+                                            <h3>Female Clothes</h3>
+                                            <div class="category-append"></div>
+                                        </div> <!-- section title end -->
+                                        <div class="category-carousel-active row" data-row="4">
+
+                                                 {% for i in female_clothes %}
+                                            <div class="col">
+                                                <div class="category-item">
+                                                    <div class="category-thumb">
+                                                        <a href="{% url 'female' %}">
+                                                            <img src="{{i.image1.url}}" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="category-content">
+                                                        <h4><a href="{% url 'female' %}">{{i.type_of_clothes}}</a></h4>
+                                                        <div class="price-box">
+                                                            <div class="regular-price">
+                                                                Tsh.{{iregular_price.}}
+                                                            </div>
+                                                            <div class="old-price">
+                                                                <del>{{i.old_price}}</del>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ratings">
+                                                            <span class="good"><i class="fa fa-star"></i></span>
+                                                            <span class="good"><i class="fa fa-star"></i></span>
+                                                            <span class="good"><i class="fa fa-star"></i></span>
+                                                            <span class="good"><i class="fa fa-star"></i></span>
+                                                            <span><i class="fa fa-star"></i></span>
+                                                            <div class="pro-review">
+                                                                <span>1 review(s)</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div> <!-- end single item -->
+                                            </div> <!-- end single item column -->
+
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Most viewed area end -->
+                            </div>
+                        </div>
+                        <!-- category features area end -->
                     </div>
                 </div>
-
-                {% endfor %}
-
             </div>
-            <a href="{% url 'pastpaper' %}" class="btn btn-primary mt-4 py-2 px-4">See More</a>
         </div>
-    </div>
-    <!-- Class End -->
+        <!-- page wrapper end -->
 
-    <!-- Team Start -->
-    <div class="container-fluid pt-5">
-        <div class="container">
-            <div class="text-center pb-2">
-                <p class="section-title px-5"><span class="px-2">Our Teachers</span></p>
-                <h1 class="mb-4">Meet Our Teachers</h1>
-            </div>
-            <div class="row">
-               
-                {% for i in teacher %}
+        <!-- latest product start -->
+        <div class="latest-product">
+            <div class="container">
+                <div class="section-title mb-30">
+                    <div class="title-icon">
+                        <i class="fa fa-flash"></i>
+                    </div>
+                    <h3>Electronics</h3>
+                </div> <!-- section title end -->
+                <!-- featured category start -->
+                <div class="latest-product-active slick-padding slick-arrow-style">
+                    <!-- product single item start -->
 
-                <div class="col-md-6 col-lg-3 text-center team mb-5">
-                    <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
-                        <img class="img-fluid w-100" src="{{i.image.url}}" alt="" >
-                        <div
-                            class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
-                                href="{{i.twitter_link.url}}"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
-                                href="{{i.facebook_link.url}}"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;"
-                                href="{{i.linkedIn.url}}"><i class="fab fa-linkedin-in"></i></a>
+                    {% for i in electronics %}
+                    <div class="product-item fix">
+                        <div class="product-thumb">
+                            <a href="{% url 'electronic' %}">
+                                <img src="{{i.image1.url}}" class="img-pri" alt="">
+                                <img src="{{i.image2.url}}" class="img-sec" alt="">
+                            </a>
+                            <div class="product-label">
+                                <span>hot</span>
+                            </div>
+                            <div class="product-action-link">
+                                <a href="{% url 'electronic' %}" data-toggle="modal" data-target="#quick_view"> <span data-toggle="tooltip"
+                                        data-placement="left" title="Quick view"><i class="fa fa-search"></i></span>
+                                </a>
+                                <a href="{% url 'electronic' %}" data-toggle="tooltip" data-placement="left" title="Wishlist"><i class="fa fa-heart-o"></i></a>
+                                <a href="{% url 'electronic' %}" data-toggle="tooltip" data-placement="left" title="Compare"><i class="fa fa-refresh"></i></a>
+                                <a href="{% url 'electronic' %}" data-toggle="tooltip" data-placement="left" title="Add to cart"><i class="fa fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h4><a href="{% url 'electronic' %}">{{i.product_name}}</a></h4>
+                            <div class="pricebox">
+                              <span class="regular-price">Tsh.{{i.price}}</span>
+                                <div class="ratings">
+                                    <span class="good"><i class="fa fa-star"></i></span>
+                                    <span class="good"><i class="fa fa-star"></i></span>
+                                    <span class="good"><i class="fa fa-star"></i></span>
+                                    <span class="good"><i class="fa fa-star"></i></span>
+                                    <span><i class="fa fa-star"></i></span>
+                                    <div class="pro-review">
+                                        <span>1 review(s)</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <h4>{{i.full_name}}</h4>
-                    <i>{{i.subject}}</i>
+                    <!-- product single item end -->
+
+                    {% endfor %}
+
                 </div>
-
-             {% endfor %}
-              
-
+                <!-- featured category end -->
             </div>
         </div>
-    </div>
-    <!-- Team End -->
+        <!-- latest product end -->
 
 
-    <!-- Testimonial Start -->
-    <div class="container-fluid py-5">
-        <div class="container p-0">
-            <div class="text-center pb-2">
-                <p class="section-title px-5"><span class="px-2">Testimonial</span></p>
-                <h1 class="mb-4">What Parents Say!</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel">
-                 {% for i in testimon %}
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="{{i.image.url}}" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">{{i.client_name}}</h5>
-                    <p>{{i.profession}}</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">{{i.discription}}</p>
-                    </div>
-                </div>
-
-                {% endfor %}
-                </div>
-               
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial End -->
-
-
-
-    {% endblock %}
+        {% endblock %}

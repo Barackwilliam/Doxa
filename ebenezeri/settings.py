@@ -66,15 +66,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',  # Jina la database
-        'USER': 'postgres.qjrmlkgabszozypoxbkq',  # Jina la mtumiaji
+        'USER': 'postgres.efmgyfsjkgcoleqlkslc',  # Jina la mtumiaji
         'PASSWORD': 'NyumbaChap',  # Badilisha kwa password yako halisi
         'HOST': 'aws-0-eu-central-1.pooler.supabase.com',  # URL ya server ya database
         'PORT': '5432',  # Port ya PostgreSQL (default ni 5432)
     }
 }
 
-
-# user=postgres.qjrmlkgabszozypoxbkq 
+# user=postgres.efmgyfsjkgcoleqlkslc 
 # password=[YOUR-PASSWORD] 
 # host=aws-0-eu-central-1.pooler.supabase.com
 # port=5432
@@ -107,7 +106,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'apps', 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_URL = '/media/'
+#MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -130,7 +129,7 @@ CLOUDINARY_STORAGE = {
     'chunk_size': 20971520
 }
 
-# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 MEDIA_URL = f"https://res.cloudinary.com/{os.getenv('CLOUDINARY_CLOUD_NAME')}/"
 
 # Default primary key field type
@@ -142,16 +141,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Jazzmin Settings
 JAZZMIN_SETTINGS = {
-    "site_title": "My Admin Panel",
+    "site_title": "Doxa Admin Panel",
     "site_header": "My Dashboard",
-    "site_brand": "Mbezibwa The Great Academic",
-    "welcome_sign": "Welcome to Mbezibwa The Great Academic Dashboard",
-    "copyright": "Mbezibwa The Great Academic Platform © 2025",
+    "site_brand": "Doxa Connect Company",
+    "welcome_sign": "Welcome to Doxa Connect Company Dashboard",
+    "copyright": "Doxa Connect Company © 2025",
     "search_model": "auth.User",
     "topmenu_links": [
         {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
         {"model": "auth.User"},
-        {"app": "Mbezibwa The Great Academic Platform"},
+        {"app": "Doxa Connect Company"},
     ],
 }
 

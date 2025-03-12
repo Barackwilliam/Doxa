@@ -3,75 +3,317 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+
+
 <head>
     <meta charset="utf-8">
-    <title>Mbezibwa The Great Academic Platform</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="meta description">
 
+    <!-- Site title -->
+    <title>Doxa connect company</title>
     <!-- Favicon -->
-    <link href="{% static 'img/favicon.ico' %}" rel="icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Nunito&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
-
-
-    <!-- Flaticon Font -->
-    <link href="{% static 'lib/flaticon/font/flaticon.css' %}" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
-    <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" />
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Font-Awesome CSS -->
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <!-- helper class css -->
+    <link href="{% static 'css/helper.min.css' %}" rel="stylesheet">
+    <!-- Plugins CSS -->
+    <link href="{% static 'css/plugins.css' %}" rel="stylesheet">
+    <!-- Main Style CSS -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/skin-default.css' %}" rel="stylesheet" id="galio-skin">
 </head>
 
 <body>
-    <!-- Navbar Start -->
-    <div class="container-fluid bg-light position-relative shadow">
-        <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
-            <!-- <a href="" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px;">
-                <i class="flaticon-043-teddy-bear"></i>
-                <span class="text-primary">MTGAP</span>
-            </a>  -->
+ <!-- color switcher start -->
+ <div class="color-switcher">
+    <div class="color-switcher-inner">
+        <div class="switcher-icon">
+            <i class="fa fa-cog fa-spin"></i>
+        </div>
 
+        <div class="switcher-panel-item">
+            <h3>Color Schemes</h3>
+            <ul class="nav flex-wrap colors">
+                <li class="default active" data-color="default" data-toggle="tooltip" data-placement="top" title="Red"></li>
+                <li class="green" data-color="green" data-toggle="tooltip" data-placement="top" title="Green"></li>
+                <li class="soft-green" data-color="soft-green" data-toggle="tooltip" data-placement="top" title="Soft-Green"></li>
+                <li class="sky-blue" data-color="sky-blue" data-toggle="tooltip" data-placement="top" title="Sky-Blue"></li>
+                <li class="orange" data-color="orange" data-toggle="tooltip" data-placement="top" title="Orange"></li>
+                <li class="violet" data-color="violet" data-toggle="tooltip" data-placement="top" title="Violet"></li>
+            </ul>
+        </div>
 
-            <a href="{% url 'admin:index' %}" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px;">
-                <span class="text-primary"><img src="{% static 'img/logo.png' %}" height="60px" width="60">MTGAP</span>
-            </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                <div class="navbar-nav font-weight-bold mx-auto py-0">
-                    <a href="{% url 'home' %}" class="nav-item nav-link active">Home</a>
-                    <a href="{% url 'service' %}" class="nav-item nav-link">Services</a>
-                    <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
-                    <a href="{% url 'pastpaper' %}" class="nav-item nav-link">Past Papers</a>
-                    <a href="{% url 'books' %}" class="nav-item nav-link">books</a>
-                    <a href="{% url 'gallery' %}" class="nav-item nav-link">Gallery</a>
-                    <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
-                </div>
-                <a href="{% url 'contact' %}" class="btn btn-primary px-4">Join Now</a>
-            </div>
-        </nav>
+        <div class="switcher-panel-item">
+            <h3>Layout Style</h3>
+            <ul class="nav layout-changer">
+                <li><button class="btn-layout-changer active" data-layout="wide">Wide</button></li>
+                <li><button class="btn-layout-changer" data-layout="boxed">Boxed</button></li>
+            </ul>
+        </div>
+
+        <div class="switcher-panel-item bg">
+            <h3>Background Pattern</h3>
+            <ul class="nav flex-wrap bgbody-style bg-pattern">
+                <li><img src="{% static 'img/bg-panel/bg-pettern/1.png' %}" alt="Pettern"></li>
+                <li><img src="{% static 'img/bg-panel/bg-pettern/2.png' %}" alt="Pettern"></li>
+                <li><img src="{% static 'img/bg-panel/bg-pettern/3.png' %}" alt="Pettern"></li>
+                <li><img src="{% static 'img/bg-panel/bg-pettern/4.png' %}" alt="Pettern"></li>
+                <li><img src="{% static 'img/bg-panel/bg-pettern/5.png' %}" alt="Pettern"></li>
+                <li><img src="{% static 'img/bg-panel/bg-pettern/6.png' %}" alt="Pettern"></li>
+            </ul>
+        </div>
+
+        <div class="switcher-panel-item bg">
+            <h3>Background Image</h3>
+            <ul class="nav flex-wrap bgbody-style bg-img">
+                <li><img src="{% static 'img/bg-panel/bg-img/01.jpg' %}" alt="Images"></li>
+                <li><img src="{% static 'img/bg-panel/bg-img/02.jpg' %}" alt="Images"></li>
+                <li><img src="{% static 'img/bg-panel/bg-img/03.jpg' %}" alt="Images"></li>
+                <li><img src="{% static 'img/bg-panel/bg-img/04.jpg' %}" alt="Images"></li>
+                <li><img src="{% static 'img/bg-panel/bg-img/05.jpg' %}" alt="Images"></li>
+                <li><img src="{% static 'img/bg-panel/bg-img/06.jpg' %}" alt="Images"></li>
+            </ul>
+        </div>
     </div>
-    <!-- Navbar End -->
+</div>
+<!-- color switcher end -->
 
 
+
+
+<div class="wrapper">
+
+    <!-- header area start -->
+    <header>
+
+        <!-- header top start -->
+        <div class="header-top-area bg-gray text-center text-md-left">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-5">
+                        <div class="header-call-action">
+                            <a href="#">
+                                <i class="fa fa-envelope"></i>
+                                doxaconnect04@gmail.com
+                            </a>
+                            <a href="#">
+                                <i class="fa fa-phone"></i>
+                                +255623131577
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-7">
+                        <div class="header-top-right float-md-right float-none">
+                            <nav>
+                                <ul>
+                                    <li>
+                                        <div class="dropdown header-top-dropdown">
+                                            <!-- <a class="dropdown-toggle" id="myaccount" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
+                                                my account
+                                                <i class="fa fa-angle-down"></i>
+                                            </a> -->
+                                            <!-- <div class="dropdown-menu" aria-labelledby="myaccount">
+                                                <a class="dropdown-item" href="my-account.html">my account</a>
+                                                <a class="dropdown-item" href="login-register.html"> login</a>
+                                                <a class="dropdown-item" href="login-register.html">register</a>
+                                            </div> -->
+                                        </div>
+                                    </li>
+                                    <!-- <li>
+                                        <a href="#">my wishlist</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">my cart</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">checkout</a>
+                                    </li> -->
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header top end -->
+
+        <!-- header middle start -->
+        <div class="header-middle-area pt-20 pb-20">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-3">
+                        <div class="brand-logo">
+                            <a href="{% url 'admin:index' %}">
+                                <img src="{% static 'img/logo/logo.png' %}" alt="brand logo">
+                            </a>
+                        </div>
+                    </div> <!-- end logo area -->
+                    <div class="col-lg-9">
+                        <div class="header-middle-right">
+                            <div class="header-middle-shipping mb-20">
+                                <div class="single-block-shipping">
+                                    <div class="shipping-icon">
+                                        <i class="fa fa-clock-o"></i>
+                                    </div>
+                                    <div class="shipping-content">
+                                        <h5>Working time</h5>
+                                        <span>Mon- Sun: 8.00 - 18.00</span>
+                                    </div>
+                                </div> <!-- end single shipping -->
+                                <div class="single-block-shipping">
+                                    <div class="shipping-icon">
+                                        <i class="fa fa-truck"></i>
+                                    </div>
+                                    <div class="shipping-content">
+                                        <h5>free shipping</h5>
+                                        <span>On order over 50% Free</span>
+                                    </div>
+                                </div> <!-- end single shipping -->
+                                <div class="single-block-shipping">
+                                    <div class="shipping-icon">
+                                        <i class="fa fa-money"></i>
+                                    </div>
+                                    <div class="shipping-content">
+                                        <h5>money back 100%</h5>
+                                        <span>Within 30 Days after delivery</span>
+                                    </div>
+                                </div> <!-- end single shipping -->
+                            </div>
+                            <div class="header-middle-block">
+                                <div class="header-middle-searchbox">
+                                    <input type="text" placeholder="Search...">
+                                    <button class="search-btn"><i class="fa fa-search"></i></button>
+                                </div>
+                                <div class="header-mini-cart">
+                                    <div class="mini-cart-btn">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        <span class="cart-notification">2</span>
+                                    </div>
+                                    <div class="cart-total-price">
+                                        <span>total</span>
+                                        Tsh.0
+                                    </div>
+                                    <!-- <ul class="cart-list">
+                                        <li>
+                                            <div class="cart-img">
+                                                <a href="product-details.html"><img src="{% static 'img/cart/cart-1.jpg' %}"
+                                                        alt=""></a>
+                                            </div>
+                                            <div class="cart-info">
+                                                <h4><a href="product-details.html">simple product 09</a></h4>
+                                                <span>$60.00</span>
+                                            </div>
+                                            <div class="del-icon">
+                                                <i class="fa fa-times"></i>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="cart-img">
+                                                <a href="product-details.html"><img src="{% static 'img/cart/cart-2.jpg' %}"
+                                                        alt=""></a>
+                                            </div>
+                                            <div class="cart-info">
+                                                <h4><a href="product-details.html">virtual product 10</a></h4>
+                                                <span>$50.00</span>
+                                            </div>
+                                            <div class="del-icon">
+                                                <i class="fa fa-times"></i>
+                                            </div>
+                                        </li>
+                                        <li class="mini-cart-price">
+                                            <span class="subtotal">subtotal : </span>
+                                            <span class="subtotal-price">$88.66</span>
+                                        </li>
+                                        <li class="checkout-btn">
+                                            <a href="#">checkout</a>
+                                        </li>
+                                    </ul> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header middle end -->
+
+
+
+        
+
+            <!-- main menu area start -->
+            <div class="main-header-wrapper bdr-bottom1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="main-header-inner">
+                                <div class="category-toggle-wrap">
+                                    <div class="category-toggle">
+                                        category
+                                        <div class="cat-icon">
+                                            <i class="fa fa-angle-down"></i>
+                                        </div>
+                                    </div>
+                                    <nav class="category-menu hm-1">
+                                        <ul>
+                                            <li><a href="{% url 'electronic' %}"><i class="fa fa-desktop"></i>
+                                                    Electronics</a></li>
+
+                                        
+                                            <li><a href="{% url 'male' %}"><i class="fa fa-clock-o"></i>
+                                                    Male Clothes</a></li>
+                                            <li><a href="{% url 'female' %}"><i class="fa fa-television"></i>
+                                                    Female Clothes</a></li>
+                                            <li><a href="{% url 'child' %}"><i class="fa fa-tablet"></i>
+                                                    Baby Clothes</a></li>
+                                            <li><a href="{% url 'shoes' %}"><i class="fa fa-book"></i> Shoes</a></li>
+                                            
+                                            <li><a href="{% url 'handbag' %}"><i class="fa fa-bullhorn"></i>
+                                                    Handbags</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="main-menu">
+                                    <nav id="mobile-menu">
+                                        <ul>
+                                            <li class="active"><a href="{% url 'home' %}"><i class="fa fa-home"></i>Home <i class="fa fa-angle-down"></i></a>
+                                               
+                                            </li>
+                                            <li class="static"><a href="{% url 'contact' %}">Contact <i class="fa fa-angle-down"></i></a>
+                                                
+                                                    </li>
+                                                   
+                                                </ul>
+                                            </li>
+                                            <!-- <li><a href="#">shop <i class="fa fa-angle-down"></i></a>
+                                               
+                                                   
+                                                    
+                                                
+                                            </li>
+                                            <li><a href="#">Blog <i class="fa fa-angle-down"></i></a>
+                                              
+                                            </li>
+                                            <li><a href="contact-us.html">Contact us</a></li> -->
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 d-block d-lg-none">
+                            <div class="mobile-menu"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- main menu area end -->
 
     
     {% block content %}
@@ -80,113 +322,123 @@
     {% endblock %}
 
 
+        <!-- brand area start -->
+        <div class="brand-area pt-28 pb-30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-title mb-30">
+                            <div class="title-icon">
+                                <i class="fa fa-crop"></i>
+                            </div>
+                            <h3>Popular Brand</h3>
+                        </div> <!-- section title end -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="brand-active slick-padding slick-arrow-style">
+
+                 {% for i in brands %}
+                            <div class="brand-item text-center">
+                                <a href="{{i.link}}"><img src="{{i.image.url}}" alt=""></a>
+                            </div>
+
+                    {% endfor %}
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- brand area end -->
 
 
     
 
-    <!-- Footer Start -->
-    <div class="container-fluid text-white mt-5 py-5 bg-dark px-sm-3 px-md-5">
-        <div class="row pt-5">
-            <div class="col-lg-3 col-md-6 mb-5">
-                <a href="https://www.nyumbachap.com" class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0" style="font-size: 40px; line-height: 40px;">
-                    <span class="text-primary"><img src="{% static 'img/logo.png' %}" height="50px" width="50"></i>MTGAP</span>
-                </a>
-                <p>Established in Dodoma City, Tanzania – Mainland, in January 2024, our mission is to enhance learning experiences, improve academic performance, and build a strong foundation for future leaders.
+        <!-- footer area start -->
+        <footer>
+            <!-- footer top start -->
+            <div class="footer-top bg-black pt-14 pb-14">
+                <div class="container">
+                    <div class="footer-top-wrapper">
+                        <div class="newsletter__wrap">
+                            <div class="newsletter__title">
+                                <div class="newsletter__icon">
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <div class="newsletter__content">
+                                    <h3>sign up for newsletter</h3>
+                                    <p>To get news and Updates Everyday</p>
+                                </div>
+                            </div>
+                            <div class="newsletter__box">
+                                <form id="mc-form">
+                                    <input type="email" id="mc-email" autocomplete="off" placeholder="Email">
+                                    <button id="mc-submit">subscribe!</button>
+                                </form>
+                            </div>
+                            <!-- mailchimp-alerts Start -->
+                            <div class="mailchimp-alerts">
+                                <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                                <div class="mailchimp-success"></div><!-- mailchimp-success end -->
+                                <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+                            </div>
+                            <!-- mailchimp-alerts end -->
+                        </div>
+                        <div class="social-icons">
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Google-plus"><i class="fa fa-google-plus"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Youtube"><i class="fa fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer top end -->
 
-                </p>
-                <div class="d-flex justify-content-start mt-4">
-                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
-                        style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
-                        style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
-                        style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
-                        style="width: 38px; height: 38px;" href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h3 class="text-primary mb-4">Get In Touch</h3>
-                <div class="d-flex">
-                    <h4 class="fa fa-map-marker-alt text-primary"></h4>
-                    <div class="pl-3">
-                        <h5 class="text-white">Address</h5>
-                        <p>Mipango Street, Dodoma, Tanzania</p>
-                    </div>
-                </div>
-                <div class="d-flex">
-                    <h4 class="fa fa-envelope text-primary"></h4>
-                    <div class="pl-3">
-                        <h5 class="text-white">Email</h5>
-                        <p>mbezibwaemmanuel12@gmail.com</p>
-                        <p>mbezip@gmail.com</p>
+            <!-- footer bootom end -->
 
-                    </div>
-                </div>
-                <div class="d-flex">
-                    <h4 class="fa fa-phone-alt text-primary"></h4>
-                    <div class="pl-3">
-                        <h5 class="text-white">Phone</h5>
-                        <p>0712393104</p>
-                    </div>
+        </footer>
+        <!-- footer area end -->
+
+    </div>
+
+
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h3 class="text-primary mb-4">Quick Links</h3>
-                <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white mb-2" href="{% url 'home' %}"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                    <a class="text-white mb-2" href="{% url 'about' %}"><i class="fa fa-angle-right mr-2"></i>About Us</a>
-                    <a class="text-white mb-2" href="{% url 'books' %}"><i class="fa fa-angle-right mr-2"></i>Our Books</a>
-                    <a class="text-white mb-2" href="{% url 'pastpaper' %}"><i class="fa fa-angle-right mr-2"></i>Past Papers</a>
-                    <a class="text-white" href="{% url 'contact' %}"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h3 class="text-primary mb-4">Newsletter</h3>
-                <form action="">
-                    <div class="form-group">
-                        <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required" />
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control border-0 py-4" placeholder="Your Email"
-                            required="required" />
-                    </div>
-                    <div>
-                        <button class="btn btn-primary btn-block border-0 py-3" type="submit">Submit Now</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="container-fluid pt-5" style="border-top: 1px solid rgba(23, 162, 184, .2);;">
-            <p class="m-0 text-center text-white">
-                &copy; <a class="text-primary font-weight-bold" href="https://www.nyumbachap.com">Mbezibwa The Great Academic Platform</a>. All Rights Reserved. 
-				
-				<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-				 <a class="text-primary font-weight-bold" href="https://htmlcodex.com"></a>
-            </p>
         </div>
     </div>
-    <!-- Footer End -->
+    <!-- Quick view modal end -->
+
+    <!-- Scroll to top start -->
+    <div class="scroll-top not-visible">
+        <i class="fa fa-angle-up"></i>
+    </div>
+    <!-- Scroll to Top End -->
 
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary p-3 back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
-    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
-    <script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
-    <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="{% static 'mail/jqBootstrapValidation.min.js' %}"></script>
-    <script src="{% static 'mail/contact.js' %}"></script>
-
-    <!-- Template Javascript -->
+    <!--All jQuery, Third Party Plugins & Activation (main.js) Files-->
+    <script src="{% static 'js/vendor/modernizr-3.6.0.min.js' %}"></script>
+    <!-- Jquery Min Js -->
+    <script src="{% static 'js/vendor/jquery-3.3.1.min.js' %}"></script>
+    <!-- Popper Min Js -->
+    <script src="{% static 'js/vendor/popper.min.js' %}"></script>
+    <!-- Bootstrap Min Js -->
+    <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+    <!-- Plugins Js-->
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <!-- Ajax Mail Js -->
+    <script src="{% static 'js/ajax-mail.js' %}"></script>
+    <!-- Active Js -->
     <script src="{% static 'js/main.js' %}"></script>
+    <!-- Switcher JS [Please Remove this when Choose your Final Projct] -->
+   
 </body>
+
+
 
 </html>

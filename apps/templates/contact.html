@@ -3,95 +3,112 @@
 {% load static %}
 {% block content %}
 
-    <!-- Contact Start -->
-    <div class="container-fluid pt-5">
-        <div class="container">
-            <div class="text-center pb-2">
-                <p class="section-title px-5"><span class="px-2">Get In Touch</span></p>
-                <h1 class="mb-4">Contact Us For Any Query</h1>
+
+
+
+        </header>
+        <!-- header area end -->
+
+        <!-- breadcrumb area start -->
+        <div class="breadcrumb-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="breadcrumb-wrap">
+                            <nav aria-label="breadcrumb">
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">contact us</li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="row">
-                
-                {% if ujumbe %}
-                <p style="text-align: center; color:Green;">{{ujumbe}}</p>
-                {% endif %}
-                
-                <div class="col-lg-7 mb-5">
-                    <div class="contact-form">
-                        <div id="success"></div>
-                        
+        </div>
+        <!-- breadcrumb area end -->
+
+        <!-- contact area start -->
+        <div class="contact-area pb-34 pb-md-18 pb-sm-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
                        
+                        <div class="contact-message">
+                            <h2>What Can We help You Today</h2>
+                            {% if ujumbe %}
+                            <p style="text-align: center; color:Green;">{{ujumbe}}</p>
+                            {% endif %}
+                            
+                            <form id="contact-form" action="" method="post" class="contact-form">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <input name="full_name" placeholder="Full Name" type="text" required>    
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <input type="number" name="phone_number" placeholder="Phone"  required>   
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <input type="email" name="email" placeholder="Email" required>    
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <input name="subject" placeholder="Subject" type="text">   
+                                    </div>
+                                <div class="col-12">
+                                        <div class="contact2-textarea text-center">
+                                            <textarea placeholder="Message" name="message"  class="form-control2" required=""></textarea>     
+                                        </div>   
+                                        <div class="contact-btn">
+                                            <button class="sqr-btn" type="submit">Send Message</button> 
+                                        </div> 
+                                    </div> 
+                                    <!-- <div class="col-12 d-flex justify-content-center">
+                                        <p class="form-messege"></p>
+                                    </div> -->
+                                </div>
+                            </form>    
+                        </div> 
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="contact-info mt-md-28 mt-sm-28">
+                            <h2>contact us</h2>
+                            <p>At Doxa Connect Company, we value communication and are always ready to assist you. Whether you have inquiries about our services, need support, or wish to collaborate with us, our team is here to provide the best customer experience.
 
-    <form name="sentMessage" method="post" id="contactForm" novalidate="novalidate">
-        {% csrf_token %}
-        <div class="control-group">
-            <input type="text" class="form-control" name="Full_name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
-            <p class="help-block text-danger"></p>
-        </div>
-        <div class="control-group">
-            <input type="email" class="form-control" name="Email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
-            <p class="help-block text-danger"></p>
-        </div>
-        <div class="control-group">
-            <input type="text" class="form-control" name="Subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
-            <p class="help-block text-danger"></p>
-        </div>
-        <div class="control-group">
-            <textarea class="form-control" rows="6" name="Message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
-            <p class="help-block text-danger"></p>
-        </div>
-        <div>
-            <button class="btn btn-primary py-2 px-4" type="submit" id="sendMessageButton">Send Message</button>
-        </div>
-    </form>
+                               
+                                </p>
+                            <ul>
+                                <li><i class="fa fa-fax"></i>  Ubungo, Street National Housing, Block G, Plot P28792</li>
+                                <li><i class="fa fa-building"></i>Building: EACL, Kituo cha Mwendokasi cha Bus Terminal</li>
 
-                    </div>
-                </div>
-                <div class="col-lg-5 mb-5">
-                    <p>Welcome to Mbezibwa, your trusted academic platform dedicated to providing quality educational resources and support. We are committed to fostering academic excellence and innovation.</p>
-                    <div class="d-flex">
-                        <i class="fa fa-map-marker-alt d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle" style="width: 45px; height: 45px;"></i>
-                        <div class="pl-3">
-                            <h5>Address</h5>
-                            <p>Mipango Street, Dodoma, Tanzania</p>
+                                <li><i class="fa fa-phone"></i> doxaconnect04@gmail.com</li>
+                                <li><i class="fa fa-envelope-o"></i> +255623131577</li>
+                            </ul>
+                            <div class="working-time">
+                                <h3>Working hours</h3>
+                                <p><span>Monday – Saturday:</span>08AM – 22PM</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="d-flex">
-                        <i class="fa fa-envelope d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle" style="width: 45px; height: 45px;"></i>
-                        <div class="pl-3">
-                            <h5>Email</h5>
-                            <p>mbezimbwaemanuel12@gmail.com</p>
-                            <p>mbezip@gmail.com</p>
-
-                        </div>
-                    </div>
-                    <div class="d-flex">
-                        <i class="fa fa-phone-alt d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle" style="width: 45px; height: 45px;"></i>
-                        <div class="pl-3">
-                            <h5>Phone</h5>
-                            <p>0712393104</p>
-                        </div>
-                    </div>
-                    <div class="d-flex">
-                        <i class="far fa-clock d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle" style="width: 45px; height: 45px;"></i>
-                        <div class="pl-3">
-                            <h5>Opening Hours</h5>
-                            <strong>Monday - Friday:</strong>
-                            <p class="m-0">08:00 AM - 05:00 PM </p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <p>We can also Chat in WhatsApp Directly Just by Clicking The Button Below</p>
-                    <button class="btn btn-primary py-2 px-4" type="button" id="sendMessageButton" 
-                        onclick="window.location.href='https://api.whatsapp.com/send?phone=255712393104&text=Hello,%20MTGAP.%20I%20need%20more%20details%20about%20the%20procedure.%20Can%20you%20help%20me?';">
-                        WhatsApp
-                    </button>
-                    
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Contact End -->
+        <!-- contact area end -->
 
-    {% endblock %}
+        <!-- map area start -->
+        <div class="map-area-wrapper">
+            <div class="container">
+                <div id="map_content" 
+                     data-lat="-6.786066" 
+                     data-lng="39.203265" 
+                     data-zoom="12" 
+                     data-maptitle="Ubungo, Dar es Salaam" 
+                     data-mapaddress="Ubungo, Dar es Salaam, Tanzania">
+                </div>
+            </div>
+        </div>
+        
+        <!-- map area end -->
+
+
+        {% endblock %}

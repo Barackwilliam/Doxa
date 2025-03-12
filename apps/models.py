@@ -3,110 +3,125 @@ from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
-class Service(models.Model):
-    Service_type = models.CharField(max_length=255)
-    image = CloudinaryField('image')
+
+
+class Electronic(models.Model):
+    product_name = models.CharField(max_length=300)
+    price = models.IntegerField()
     description = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-
+    available_product = models.PositiveIntegerField()
+    image1 = CloudinaryField('image')
+    image2 = CloudinaryField('image')
+   
     def __str__(self):
-        return self.Service_type
-    
-
-class Teacher(models.Model):
-    full_name = models.CharField(max_length=255)
-    subject = models.CharField(max_length=500)
-    facebook_link = models.URLField(max_length=300, blank=True, null=True)
-    twitter_link = models.URLField(max_length=300, blank=True, null=True)
-    linkedIn = models.URLField(max_length=300, blank=True, null=True)
-    image = CloudinaryField('image')
-    
-    
-    def __str__(self):
-        return self.full_name
-    
+        return self.product_name
 
 
-class Past_Paper(models.Model):
-    STANDARD_CHOICES = [
-        ('standard 1','standard 1'),
-        ('standard 2','standard 2'),
-        ('standard 3','standard 3'),
-        ('standard 4','standard 4'),
-        ('standard 5','standard 5'),
-        ('standard 6','standard 6'),
-        ('standard 7','standard 7')
-    ]
 
 
-    subject = models.CharField(max_length=300)
+class Male_clothe(models.Model):
+    type_of_clothes = models.CharField(max_length=300)
+    regular_price = models.IntegerField()
+    old_price = models.IntegerField()
     description = models.TextField()
-    year = models.PositiveIntegerField()
-    cover_image = CloudinaryField('image')
-    standard = models.CharField(max_length=20,choices=STANDARD_CHOICES)
-    pdf_file = CloudinaryField('raw',folder="Pdf_documents", resource_type='raw')
-    time_uploaded = models.DateTimeField(auto_now_add=True)
+    image1 = CloudinaryField('image')
+    image2 = CloudinaryField('image')
 
-
-    def pdf_url(self):
-        if self.pdf_file:
-            return Cloudinary.utils.cloudinary_url(self.pdf_file.public_id,resource_type="raw")[0]
-        return None
 
     def __str__(self):
-        return f"{self.subject} ({self.year})- {self.standard}"
+        return self.type_of_clothes
 
 
 
-class Book_Category(models.Model):
-    category = models.CharField(max_length=300)
-    total_books = models.PositiveIntegerField()
-    image = CloudinaryField('image')
+
+class Female_clothe(models.Model):
+    type_of_clothes = models.CharField(max_length=300)
+    regular_price = models.IntegerField()
+    old_price = models.IntegerField()
+    description = models.TextField()
+    image1 = CloudinaryField('image')
+    image2 = CloudinaryField('image')
+
 
     def __str__(self):
-        return self.category
+        return self.type_of_clothes
 
 
-class Register_Book(models.Model):
-     book_name = models.CharField(max_length=500)
-     price = models.IntegerField()
-     class_level = models.CharField(max_length=255)
-     available_book = models.IntegerField()
-     date_uploaded = models.DateTimeField(auto_now_add=True)
-     image = CloudinaryField('image')
-     def __str__(self):
-         return self.book_name
+
+
+class Child_clothe(models.Model):
+    type_of_clothes = models.CharField(max_length=300)
+    regular_price = models.IntegerField()
+    old_price = models.IntegerField()
+    description = models.TextField()
+    image1 = CloudinaryField('image')
+    image2 = CloudinaryField('image')
+
+   
+
+    def __str__(self):
+        return self.type_of_clothes
+
+
+    
+
      
 class Testimonial(models.Model):
     client_name = models.CharField(max_length=300)
-    profession = models.CharField(max_length=300)
-    discription = models.TextField()
+    description = models.TextField()
     image = CloudinaryField('image')
+
+    #image = CloudinaryField('image')
     def __str__(self):
         return self.client_name
 
 
 
 
-class Gallery(models.Model):
-    CATEGORY_CHOICES = [
-        ('books', 'Books'),
-        ('lesson_plan', 'Lesson Plan'),
-        ('schemes_of_work', 'Schemes of Work'),
-    ]
-    
-    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
-    image = CloudinaryField('image')
+class Handbag(models.Model):
+    type_of_bag = models.CharField(max_length=300)
+    regular_price = models.IntegerField()
+    old_price = models.IntegerField()
     description = models.TextField()
+    image1 = CloudinaryField('image')
+    image2 = CloudinaryField('image')
+
+   
 
     def __str__(self):
-        return self.category
-    
+        return self.type_of_bag
 
-class CustomerMessage(models.Model):
-    full_name = models.CharField(max_length=300)
+
+
+
+class Shoe(models.Model):
+    type_of_shoes = models.CharField(max_length=300)
+    regular_price = models.IntegerField()
+    old_price = models.IntegerField()
+    description = models.TextField()
+    image1 = CloudinaryField('image')
+    image2 = CloudinaryField('image')
+   
+
+    def __str__(self):
+        return self.type_of_shoes
+
+
+class Brand(models.Model):
+    brand_name = models.CharField(max_length=300)
+    image = CloudinaryField('image')
+    link = models.URLField(max_length=300, blank=True, null=True)
+    def __str__(self):
+        return self.brand_name
+
+
+
+
+class Message(models.Model):
+    full_name = models.CharField(max_length=255)
+    phone_number = models.IntegerField()
     email = models.EmailField()
-    subject = models.CharField(max_length=500)
+    subject = models.CharField(max_length=255)
     message = models.TextField()
 
     def __str__(self):

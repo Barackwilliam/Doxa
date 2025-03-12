@@ -1,17 +1,16 @@
 
 from django.urls import path
 from . import views
-from .views import pastpaper, download_pdf
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('service/', views.service, name='service'),
-    path('about/', views.about, name='about'),
+    path('female/', views.female, name='female'),
+    path('male/', views.male, name='male'),
+    path('child/', views.child, name='child'),
+    path('electronic/', views.electronic, name='electronic'),
+    path('handbag/', views.handbag, name='handbag'),  # URL for gallery
+    path('shoes/', views.shoes, name='shoes'),
     path('contact/', views.contact, name='contact'),
-    path('book/', views.books, name='books'),
-    path('gallery/', views.gallery, name='gallery'),  # URL for gallery
-    path('pastpapers/', pastpaper, name='pastpaper'),
-    path('download/<path:file_id>/', download_pdf, name='download_pdf'),
 
 
    

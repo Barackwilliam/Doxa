@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from .forms import MyMessage
 
-from .models import Service, Past_Paper,Register_Book,Book_Category,Testimonial,Teacher
+from .models import Electronic,Male_clothe,Female_clothe, Child_clothe,Testimonial,Shoe,Handbag,Brand
+
+
 from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User, auth
@@ -13,113 +15,151 @@ from django.http import HttpResponse
 
 
 
-from .forms import MyMessage
+# from .forms import MyMessage
 
-def contact(request):
-    ujumbe = ""
+# def contact(request):
+#     ujumbe = ""
 
-    if request.method == 'POST':
-        form = MyMessage(request.POST)
-        if form.is_valid():
-            form.save()
-            ujumbe = "Hongera! Ujumbe wako umetumwa kikamilifu."
-            return redirect('contact')  # Kuzuia double submission
-    else:
-        form = MyMessage()
+#     if request.method == 'POST':
+#         form = MyMessage(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             ujumbe = "Hongera! Ujumbe wako umetumwa kikamilifu."
+#             return redirect('contact')  # Kuzuia double submission
+#     else:
+#         form = MyMessage()
 
-    context = {
-        'form': form,
-        'ujumbe': ujumbe
-    }
-    return render(request, 'contact.html', context)
+#     context = {
+#         'form': form,
+#         'ujumbe': ujumbe
+#     }
+#     return render(request, 'contact.html', context)
 
 
 
 # Home Page
 def home(request):
-    past_papers = Past_Paper.objects.all()[:3]
-    teacher = Teacher.objects.all()[:2]
-    testimon = Testimonial.objects.all()
+    #past_papers = Past_Paper.objects.all()[:3]
+    electronics = Electronic.objects.all()
+    female_clothes = Female_clothe.objects.all()
+    testimonial = Testimonial.objects.all()
+    child_clothes = Child_clothe.objects.all()
+    male_clothes = Male_clothe.objects.all()
+    brands = Brand.objects.all()
 
+
+    
+   
     context = {
-       'past_papers':past_papers,
-       'teacher':teacher,
-        'testimon':testimon
+       'electronics':electronics,
+       'female_clothes':female_clothes,
+       'testimonial':testimonial,
+       'child_clothes':child_clothes,
+       'male_clothes':male_clothes,
+       'brands':brands
     }
  
     return render(request, 'index.html',context)
 
-# Elimu ya Ufahamu
-def service(request):
-    services = Service.objects.all()
-    teacher = Teacher.objects.all()
+
+    
+
+
+from .forms import MyMessage
+
+def contact(request):
+   brands = Brand.objects.all()
+   ujumbe = ""
+
+   if request.method == 'POST':
+      form = MyMessage(request.POST)
+      if form.is_valid():
+         form.save()
+         ujumbe = "Hongera! Ujumbe wako umetumwa kikamilifu."
+         return redirect('contact')  # Kuzuia double submission
+   else:
+      form = MyMessage()
+
+   context = {
+        'form': form,
+        'ujumbe': ujumbe,
+        'brands':brands
+   }
+   return render(request, 'contact.html', context)
+
+
+
+
+def female(request):
+   brands = Brand.objects.all()
+   female_clothes = Female_clothe.objects.all()
+    
+   context = {
+       'female_clothes':female_clothes,
+       'brands':brands
+    }
+ 
+   return render(request, 'female.html',context)
+
+
+
+
+def electronic(request):
+   brands = Brand.objects.all()
+   electronics = Electronic.objects.all()
+    
+   context = {
+       'electronics':electronics,
+       'brands':brands
+    }
+ 
+   return render(request, 'electronic.html',context)
+
+
+
+def male(request):
+   brands = Brand.objects.all()
+   male_clothes = Male_clothe.objects.all()
+    
+   context = {
+       'male_clothes':male_clothes,
+       'brands':brands
+    }
+ 
+   return render(request, 'male.html',context)
+
+def child(request):
+    child_clothes = Child_clothe.objects.all()
+    brands = Brand.objects.all()
     
     context = {
-        'services':services,
-        'teacher':teacher
+       'child_clothes':child_clothes,
+       'brands':brands
     }
+ 
+    return render(request, 'child.html',context)
 
-    return render(request, 'service.html',context)
 
-# Warsha za Kiroho
-# def contact(request):
-#     return render(request, 'contact.html')
-
-# Ushuhuda wa Wateja
-def about(request):
-    teacher = Teacher.objects.all()
-
-    context = {
-       'teacher':teacher,
+def shoes(request):
+   brands = Brand.objects.all()
+   sho = Shoe.objects.all()
+    
+   context = {
+       'sho':sho,
+       'brands':brands
     }
-
-    return render(request, 'about.html',context)
-
-
-def pastpaper(request):
-    past_papers = Past_Paper.objects.all()
-    return render(request, 'pastpaper.html', {'past_papers': past_papers})
-
-def download_pdf(request, file_id):
-    # Construct the Cloudinary URL for the file based on the file_id
-    cloudinary_url = f"https://res.cloudinary.com/Ydjzcf2bvp/raw/upload/{file_id}"
-
-    # Fetch the file from Cloudinary
-    response = requests.get(cloudinary_url, stream=True)
-
-    if response.status_code == 200:
-        # Get the filename from the URL (or use file_id)
-        filename = file_id.split("/")[-1]
-
-        # Set the headers to force download
-        res = HttpResponse(response.content, content_type='application/pdf')
-        res['Content-Disposition'] = f'attachment; filename="{filename}"'
-
-        return res
-    else:
-        return HttpResponse("File not found", status=404)
+ 
+   return render(request, 'shoes.html',context)
 
 
-
-def test(request):
-    return render(request,'test.html')
-
-def books(request):
-    book = Register_Book.objects.all()
-    categories = Book_Category.objects.all()
-    testimon = Testimonial.objects.all()
-
-    context = {
-        'book':book,
-        'categories':categories,
-        'testimon':testimon
+def handbag(request):
+   brands = Brand.objects.all()
+   handbags = Handbag.objects.all()
+    
+   context = {
+       'handbags':handbags,
+       'brands':brands
     }
-    return render(request,'book.html',context)
+ 
+   return render(request, 'handbag.html',context)
 
-
-from .models import Gallery
-
-def gallery(request):
-    # Get all gallery items
-    gallery_items = Gallery.objects.all()
-    return render(request, 'gallery.html', {'gallery_items': gallery_items})
