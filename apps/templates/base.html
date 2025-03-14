@@ -104,7 +104,7 @@
                             </a>
                             <a href="#">
                                 <i class="fa fa-phone"></i>
-                                +255623131577
+                                +255715870086
                             </a>
                         </div>
                     </div>
@@ -254,32 +254,25 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="main-header-inner">
-                                <div class="category-toggle-wrap">
-                                    <div class="category-toggle">
-                                        category
-                                        <div class="cat-icon">
-                                            <i class="fa fa-angle-down"></i>
-                                        </div>
-                                    </div>
-                                    <nav class="category-menu hm-1">
-                                        <ul>
-                                            <li><a href="{% url 'electronic' %}"><i class="fa fa-desktop"></i>
-                                                    Electronics</a></li>
-
-                                        
-                                            <li><a href="{% url 'male' %}"><i class="fa fa-clock-o"></i>
-                                                    Male Clothes</a></li>
-                                            <li><a href="{% url 'female' %}"><i class="fa fa-television"></i>
-                                                    Female Clothes</a></li>
-                                            <li><a href="{% url 'child' %}"><i class="fa fa-tablet"></i>
-                                                    Baby Clothes</a></li>
-                                            <li><a href="{% url 'shoes' %}"><i class="fa fa-book"></i> Shoes</a></li>
-                                            
-                                            <li><a href="{% url 'handbag' %}"><i class="fa fa-bullhorn"></i>
-                                                    Handbags</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
+                                
+<div class="category-toggle-wrap">
+    <div class="category-toggle" data-bs-toggle="collapse" data-bs-target="#categoryMenu">
+        Category
+        <div class="cat-icon">
+            <i class="fa fa-angle-down"></i>
+        </div>
+    </div>
+    <nav class="category-menu collapse" id="categoryMenu">
+        <ul class="list-unstyled">
+            <li><a href="{% url 'electronic' %}"><i class="fa fa-desktop"></i> Electronics</a></li>
+            <li><a href="{% url 'male' %}"><i class="fa fa-clock-o"></i> Male Attires</a></li>
+            <li><a href="{% url 'female' %}"><i class="fa fa-television"></i> Female Attires</a></li>
+            <li><a href="{% url 'child' %}"><i class="fa fa-tablet"></i> Baby Attires</a></li>
+            <li><a href="{% url 'shoes' %}"><i class="fa fa-book"></i> Shoes</a></li>
+            <li><a href="{% url 'handbag' %}"><i class="fa fa-bullhorn"></i> Handbags</a></li>
+        </ul>
+    </nav>
+</div>
                                 <div class="main-menu">
                                     <nav id="mobile-menu">
                                         <ul>
