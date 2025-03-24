@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Electronic,Male_clothe,Female_clothe,Child_clothe,Testimonial,Handbag,Shoe,Brand,Message
+from .models import Electronic,Male_clothe,Female_clothe,Child_clothe,Testimonial,Handbag,Shoe,Brand,Message,Shoe
 # Register your models here.
 
 admin.site.register(Brand)
@@ -50,3 +50,14 @@ class MessageAdmin(admin.ModelAdmin):
     list_display = ('full_name','email','subject','message','phone_number')
     search_fields = ('full_name','email','phone_number')
     list_filter = ('full_name','email')
+
+
+
+
+@admin.register(Shoe)
+class ShoeAdmin(admin.ModelAdmin):
+    list_display = ('type_of_shoes','regular_price','old_price','description','image1','image2')
+    search_fields = ('type_of_shoes','regular_price')
+    list_filter = ('type_of_shoes','regular_price')
+
+

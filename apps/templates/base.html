@@ -11,6 +11,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="meta description">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 
     <!-- Site title -->
     <title>Doxa connect company</title>
@@ -148,16 +150,16 @@
         <div class="header-middle-area pt-20 pb-20">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-3">
+                    <div class="col-lg-3" style="background-color: black;">
                         <div class="brand-logo">
                             <a href="{% url 'admin:index' %}">
-                                <img src="{% static 'img/logo/logod.png' %}" alt="brand logo">
+                                <img src="{% static 'img/logo/logop.jpg' %}" alt="brand logo">
                             </a>
                         </div>
                     </div> <!-- end logo area -->
                     <div class="col-lg-9">
                         <div class="header-middle-right">
-                            <div class="header-middle-shipping mb-20">
+                            <!-- <div class="header-middle-shipping mb-20">
                                 <div class="single-block-shipping">
                                     <div class="shipping-icon">
                                         <i class="fa fa-clock-o"></i>
@@ -166,7 +168,7 @@
                                         <h5>Working time</h5>
                                         <span>Mon- Sun: 8.00 - 18.00</span>
                                     </div>
-                                </div> <!-- end single shipping -->
+                                </div> 
                                 <div class="single-block-shipping">
                                     <div class="shipping-icon">
                                         <i class="fa fa-truck"></i>
@@ -175,7 +177,7 @@
                                         <h5>free shipping</h5>
                                         <span>On order over 50% Free</span>
                                     </div>
-                                </div> <!-- end single shipping -->
+                                </div> 
                                 <div class="single-block-shipping">
                                     <div class="shipping-icon">
                                         <i class="fa fa-money"></i>
@@ -184,8 +186,10 @@
                                         <h5>money back 100%</h5>
                                         <span>Within 30 Days after delivery</span>
                                     </div>
-                                </div> <!-- end single shipping -->
+                                </div> 
                             </div>
+
+                             -->
                             <div class="header-middle-block">
                                 <div class="header-middle-searchbox">
                                     <input type="text" placeholder="Search...">
@@ -194,7 +198,7 @@
                                 <div class="header-mini-cart">
                                     <div class="mini-cart-btn">
                                         <i class="fa fa-shopping-cart"></i>
-                                        <span class="cart-notification">2</span>
+                                        <span class="cart-notification">0</span>
                                     </div>
                                     <div class="cart-total-price">
                                         <span>total</span>
@@ -265,36 +269,48 @@
     <nav class="category-menu collapse" id="categoryMenu">
         <ul class="list-unstyled">
             <li><a href="{% url 'electronic' %}"><i class="fa fa-desktop"></i> Electronics</a></li>
-            <li><a href="{% url 'male' %}"><i class="fa fa-clock-o"></i> Male Attires</a></li>
-            <li><a href="{% url 'female' %}"><i class="fa fa-television"></i> Female Attires</a></li>
-            <li><a href="{% url 'child' %}"><i class="fa fa-tablet"></i> Baby Attires</a></li>
-            <li><a href="{% url 'shoes' %}"><i class="fa fa-book"></i> Shoes</a></li>
-            <li><a href="{% url 'handbag' %}"><i class="fa fa-bullhorn"></i> Handbags</a></li>
-        </ul>
-    </nav>
-</div>
-                                <div class="main-menu">
+
+             <li><a href="{% url 'shoes' %}"><i class="fa fa-shoe-prints"></i> Shoes</a></li>
+            <li><a href="{% url 'handbag' %}"><i class="fa fa-shopping-bag"></i> Handbags</a></li>
+            
+            <li class="menu-item-has-children">
+                <a href=""><i class="fa fa-tshirt"></i>Apparels</a>
+                <ul>
+                         <!-- <div class="bg bg-warning">  -->
+                          <li><a href="{% url 'male' %}" style="color: rgb(29, 175, 9)";>____</i> Male Attires</a></li>
+                           <li><a href="{% url 'female' %}" style="color: rgb(29, 175, 9)">____</i> Female Attires</a></li>
+                         <li><a href="{% url 'child' %}"style="color: rgb(29, 175, 9)">____</i> Baby Attires</a></li>
+                        <!-- </div> -->
+                </ul>
+            </li>
+            </ul>
+           </nav>
+          </div>
+
+
+
+                               <div class="main-menu">
                                     <nav id="mobile-menu">
                                         <ul>
-                                            <li class="active"><a href="{% url 'home' %}"><i class="fa fa-home"></i>Home <i class="fa fa-angle-down"></i></a>
-                                               
-                                            </li>
-                                            <li class="static"><a href="{% url 'contact' %}">Contact <i class="fa fa-angle-down"></i></a>
-                                                
-                                                    </li>
+                                            <li class="active"><a href="{% url 'home' %}"><i class="fa fa-home"></i>Home </a></li>
+                                            <li class="static"><a href="{% url 'contact' %}">Contact </a></li>
+
+
+
+
+
+                                                          <li class="menu-item-has-children">
+                                                               <a href=""><i class="fa fa-shopping-bag"></i>Products</a>
+                                                              <ul>
+                                                                   <li><a href="{% url 'electronic' %}" style="color: rgb(255, 4, 4)";><i class="fa fa-tv"></i> Electronics</a></li>
+                                                                    <li><a href="{% url 'female' %}" style="color: rgb(255, 4, 4)"><i class="fa fa-tshirt"></i> Apparels</a></li>
+                                                                    <li><a href="{% url 'shoes' %}"style="color: rgb(255, 4, 4)"><i class="fa fa-shoe-prints"></i>Shoes</a></li>
+                                                                    <li><a href="{% url 'handbag' %}" style="color: rgb(255, 4, 4)"><i class="fa fa-shopping-bag"></i>Handbags</a></li>
                                                    
-                                                </ul>
-                                            </li>
-                                            <!-- <li><a href="#">shop <i class="fa fa-angle-down"></i></a>
-                                               
                                                    
-                                                    
-                                                
-                                            </li>
-                                            <li><a href="#">Blog <i class="fa fa-angle-down"></i></a>
-                                              
-                                            </li>
-                                            <li><a href="contact-us.html">Contact us</a></li> -->
+                                                                </ul>
+                                                          </li>
+                                           
                                         </ul>
                                     </nav>
                                 </div>
@@ -334,7 +350,7 @@
 
                  {% for i in brands %}
                             <div class="brand-item text-center">
-                                <a href="{{i.link}}"><img src="{{i.image.url}}" alt=""></a>
+                                <a href="{{i.link.url}}"><img src="{{i.image.url}}" alt=""></a>
                             </div>
 
                     {% endfor %}
